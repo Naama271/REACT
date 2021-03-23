@@ -6,23 +6,24 @@ class App extends React.Component {
     super(props);
 
     this.textInput = React.createRef();
-    this.focusTextInput = this.focusTextInput.bind(this);
+    this.copyTextInput = this.copyTextInput.bind(this);
   }
 
-  focusTextInput() {
-    this.textInput.current.focus();
+  copyTextInput() {
+    this.textInput.current.select();
+    document.execCommand('copy');
   }
 
   render() {
     return (
       <div>
-        <input
-          type="text"
+        <h3>what do you think??</h3>
+        <textarea
           ref={this.textInput} />
         <input
           type="button"
-          value="Focus the text input"
-          onClick={this.focusTextInput}
+          value="copy"
+          onClick={this.copyTextInput}
         />
       </div>
     );
