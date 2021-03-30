@@ -33,11 +33,9 @@ setTerm(data.hits);
       <div  className="list">
       {term.map(el=>
       <div> {el.title}</div>
-      
       )}
       </div>
    
-    
 </div>
   );
 
